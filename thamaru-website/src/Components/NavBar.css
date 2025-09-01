@@ -1,0 +1,40 @@
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    align-self: left;
+    min-height: 4em;
+}
+
+.custom-toggle-navbar{
+    border: none;
+}
+
+.custom-toggle-navbar:focus {
+    outline: none !important; /* Removes the default outline */
+    box-shadow: none !important; /* Removes any box shadow that might cause the line */
+}
+
+.nav-item {
+    border-radius: 8px;
+    margin-right: 15px !important;
+    transition: background-color 0.3s ease; /* Only transition the background color */
+}
+
+.nav-item:hover {
+    background-color: #bfc0c063; /* Change background on hover */
+    transform: scale(1.5); /* Slight zoom effect */
+}
+
+.transition-navbar {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.navbar-scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link{
+    text-decoration: none;
+}
