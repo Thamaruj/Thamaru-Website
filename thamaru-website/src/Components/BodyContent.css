@@ -1,0 +1,112 @@
+
+.profile-name {
+    font-size: 4.5em;
+    font-weight: 50;
+}
+
+.custom-card-adjustment{
+    color: rgb(75, 75, 75);
+    background-image: radial-gradient(#c2c2c280 0.2px, rgba(255, 255, 255, 0.188) 0.2px);
+    background-size: 4px 4px;
+}
+
+.custom-shadow {
+    width: 250px;
+    height: 250px;
+    background: white;
+    position: relative;
+    box-shadow: 0 0 20px 2px rgba(84, 84, 84, 0.805);
+    transition: all 0.5s ease;
+    margin: 20px;
+    border: solid;
+    border-color: rgba(87, 88, 88, 0.433);
+    border-width: 5px;
+}
+
+.full-width-section-2{
+
+    background-image: radial-gradient(#bdbcbc80 0.2px, rgba(255, 255, 255, 0.374) 0.2px);
+    background-size: 4px 4px;
+    color: black;
+    animation: moveBackground 120s linear infinite; /* slower and smooth */
+}
+
+.full-width-section {
+    padding-top: 5px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: radial-gradient(#bdbcbc80 0.2px, rgba(255, 255, 255, 0.374) 0.2px);
+    background-size: 4px 4px;
+    color: black;
+    animation: moveBackground 120s linear infinite; /* slower and smooth */
+}
+
+.about-me-section{
+    background-image: radial-gradient(#bdbcbc80 0.2px, rgba(255, 255, 255, 0.374) 0.2px);
+    background-size: 4px 4px;
+    animation: moveBackground 120s linear infinite; /* slower and smooth */
+
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px; /* smaller movement for subtle effect */
+    }
+}
+
+.skills-section{
+    background-image: radial-gradient(#5f5e5e52 0.2px, rgba(33,37,41) 0.2px);
+    background-size: 4px 4px;
+    color: black;
+}
+
+.custom-card-skills-section{
+    background-image: radial-gradient(#54545438 0.2px, rgba(33,37,41) 0.2px);
+    background-size: 4px 4px;
+    color: black;
+}
+
+.custom-card-education-section{
+background-color: #ffffff;
+background-image:  linear-gradient(30deg, #f6f6f6 12%, transparent 12.5%, transparent 87%, #f6f6f6 87.5%, #f6f6f6), linear-gradient(150deg, #f6f6f6 12%, transparent 12.5%, transparent 87%, #f6f6f6 87.5%, #f6f6f6), linear-gradient(30deg, #f6f6f6 12%, transparent 12.5%, transparent 87%, #f6f6f6 87.5%, #f6f6f6), linear-gradient(150deg, #f6f6f6 12%, transparent 12.5%, transparent 87%, #f6f6f6 87.5%, #f6f6f6), linear-gradient(60deg, #f6f6f677 25%, transparent 25.5%, transparent 75%, #f6f6f677 75%, #f6f6f677), linear-gradient(60deg, #f6f6f677 25%, transparent 25.5%, transparent 75%, #f6f6f677 75%, #f6f6f677);
+background-size: 8px 14px;
+background-position: 0 0, 0 0, 4px 7px, 4px 7px, 0 0, 4px 7px;
+}
+
+
+.link-box,.location-box {
+    transition: background-color 0.4s ease, color 0.4s ease;
+    font-weight: 400;
+    background-color: rgba(18, 89, 203, 0.833) !important;
+    color: rgb(255, 255, 255);
+}
+
+.link-box:hover {
+ /* Bootstrap primary blue */
+    background-color: rgb(10, 77, 185) !important;
+}
+
+.link-box:hover i,
+.link-box:hover small {
+    color: rgb(255, 255, 255);
+}
+
+/*Mobile view*/
+@media (max-width: 768px) {
+    .profile-name {
+        font-size: 2.5em;
+        font-weight: 300;
+    }
+    .full-width-section {
+        height: 150vw; /* Adjust height for mobile */
+    }
+    .custom-card-adjustment{
+        text-align: center !important;
+    }
+
+
+}
+
