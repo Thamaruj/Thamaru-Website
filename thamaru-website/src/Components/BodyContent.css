@@ -5,9 +5,25 @@
 }
 
 .custom-card-adjustment{
-    color: rgb(75, 75, 75);
-    background-image: radial-gradient(#c2c2c280 0.2px, rgba(255, 255, 255, 0.188) 0.2px);
+    background-image: radial-gradient(#ddd9d9fa 0.2px, rgba(241, 234, 234, 0.977) 0.2px);
     background-size: 4px 4px;
+    background: linear-gradient(135deg, #0c3072, #16a085);
+    color: #fff;
+}
+
+.custom-card-about-section {
+    background: linear-gradient(135deg, #0c1a40, #129b90);
+    color: #fff; /* Make text readable on the gradient */
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    padding-top: 10px;
+}
+
+.custom-softskill-card{
+    background: linear-gradient(135deg, #4a90e2, #9318ff);
+    color: #fff;
 }
 
 .custom-shadow {
@@ -68,6 +84,8 @@
     background-size: 4px 4px;
     color: black;
 }
+
+
 
 .custom-card-education-section{
 background-color: #ffffff;

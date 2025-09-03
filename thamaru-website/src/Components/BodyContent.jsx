@@ -191,7 +191,7 @@ const BodyContent = () => {
                 transition={{ duration: 0.9, delay: 0.3 }}>
 
             
-            <div className="d-flex justify-content-center mt-4 pb-5">
+            <div className="d-flex justify-content-center mt-5 pb-5">
                 
                 <a href="https://www.linkedin.com/in/thamaru-jalthotage-a78145245" 
                 target="_blank" 
@@ -242,16 +242,16 @@ const BodyContent = () => {
                 className="w-100"
             >
                 <Card className="p-4 shadow-lg border-0 rounded-3 text-start w-100 h-100 bg-gray custom-card-adjustment">
-                <Card.Body > 
-                    <h2 className="mb-3 d-flex align-items-center ">
-                    <i className="fas fa-user me-2"></i> About
-                    </h2>
-                    <p>
-                        I am an undergraduate at the University of Sabaragamuwa, Sri Lanka, currently pursuing a degree in Computing and Information Systems. I am passionate about Artificial Intelligence and CI/CD practices, and I’m eager to explore how these areas can transform the way we build and deliver software.
+                    <Card.Body > 
+                        <h2 className="mb-3 d-flex align-items-center ">
+                        <i className="fas fa-user me-2"></i> About
+                        </h2>
+                        <p>
+                            I am an undergraduate at the University of Sabaragamuwa, Sri Lanka, currently pursuing a degree in Computing and Information Systems. I am passionate about Artificial Intelligence and CI/CD practices, and I’m eager to explore how these areas can transform the way we build and deliver software.
 
-                        I love learning new things, experimenting with fresh ideas, and exploring emerging technologies. Whether it’s diving into modern frameworks, solving challenging problems, or collaborating on projects, I’m always driven by curiosity and the excitement of continuous growth.
-                    </p>
-                </Card.Body>
+                            I love learning new things, experimenting with fresh ideas, and exploring emerging technologies. Whether it’s diving into modern frameworks, solving challenging problems, or collaborating on projects, I’m always driven by curiosity and the excitement of continuous growth.
+                        </p>
+                    </Card.Body>
                 </Card>
             </motion.div>
             </Col>
@@ -288,7 +288,7 @@ const BodyContent = () => {
                                 transition={{ duration: 0.8 }}
                                 className="w-100 d-flex"
                             >
-                                <Card className="p-3 shadow-sm border-1 rounded-3 d-flex flex-column justify-content-center align-items-center text-center w-100 h-100">
+                                <Card className="p-3 shadow-sm border-1 rounded-3 d-flex flex-column justify-content-center align-items-center text-center w-100 h-100 custom-card-about-section">
                                 
                                 {/* Render icon */}
                                 {typeof item.icon === "string" ? (
@@ -485,7 +485,7 @@ const BodyContent = () => {
                         transition={{ duration: 0.8, delay: index * 0.05 }} // stagger effect
                         className="w-100"
                     >
-                        <Card className="p-3 shadow-sm border-0 flex-fill d-flex flex-column justify-content-center align-items-center text-center">
+                        <Card className="p-3 shadow-sm border-0 flex-fill d-flex flex-column justify-content-center align-items-center text-center custom-softskill-card">
                         <i className={`${skill.icon} fa-2x mb-2`}></i>
                         <h5>{skill.name}</h5>
                         </Card>
