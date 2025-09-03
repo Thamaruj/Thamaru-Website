@@ -49,22 +49,29 @@ const NavigationBar = () => {
     >
       <Container fluid className="px-2.5 px-lg-5">
         <Navbar.Brand>
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className="d-flex align-items-center"
-            style={{ textDecoration: 'none', color: 'inherit' }}
+          <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{delay:0.4,duration:0.8}}
           >
-            <Image
-              src={profileIcon}
-              rounded
-              fluid
-              alt="Profile"
-              className="me-2"
-              style={{ maxWidth: '50px', height: 'auto' }}
-            />  
-            <span onClick={scrollToTop} className="fs-3 fw-light">Thamaru Jalthotage</span>
-          </Link>
+              <Link
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className="d-flex align-items-center"
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                
+                <Image
+                  src={profileIcon}
+                  rounded
+                  fluid
+                  alt="Profile"
+                  className="me-2"
+                  style={{ maxWidth: '50px', height: 'auto' }}
+                />  
+                <span onClick={scrollToTop} className="fs-3 fw-light">Thamaru Jalthotage</span>
+              </Link>
+            </motion.div>
         </Navbar.Brand>
 
         <Navbar.Toggle onClick={toggleNavbar} aria-controls='navbarScroll' className='ms-auto custom-toggle-navbar'></Navbar.Toggle>
