@@ -7,6 +7,7 @@ import BodyContent from './Components/BodyContent'
 import NavigationBar from './Components/NavBar';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
         <NavigationBar/>
+        <ScrollToTop/>
       <Routes>
         <Route path='/' element={<BodyContent />} />
       </Routes>

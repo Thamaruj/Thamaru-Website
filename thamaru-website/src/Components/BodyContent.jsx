@@ -1,6 +1,9 @@
 import { Container, Row, Col, Image,Card } from "react-bootstrap";
 import { Users, Target, BookOpen, Award } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
 import "./BodyContent.css";
 import profile from "../../public/IMG_E4796.png";
 import sabraLogo from "../../public/susl-logo-new.png";
@@ -166,17 +169,18 @@ const BodyContent = () => {
                 <motion.div
                     initial={{ opacity: 0, y:50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.9, delay: 0.3 }}>
-                <a
-                    href="mailto:thamarujalthotage1@gmail.com"
-                    className="text-decoration-none text-dark "
-                    >
-                    <div className="border-0 rounded p-2 bg-light shadow-sm link-box">
-                        <i className="fas fa-envelope me-2 "></i>
-                        <small>Email</small>
-                    </div>
-                    
-                </a>
+                    transition={{ duration: 0.9, delay: 0.3 }}
+                >
+                    <a
+                        href="mailto:thamarujalthotage1@gmail.com"
+                        className="text-decoration-none text-dark "
+                        >
+                        <div className="border-0 rounded p-2 bg-light shadow-sm link-box">
+                            <i className="fas fa-envelope me-2 "></i>
+                            <small>Email</small>
+                        </div>
+                        
+                    </a>
                 </motion.div>
                 </Col>
             </Row>
@@ -187,7 +191,7 @@ const BodyContent = () => {
                 transition={{ duration: 0.9, delay: 0.3 }}>
 
             
-            <div className="d-flex justify-content-center mt-4">
+            <div className="d-flex justify-content-center mt-4 pb-5">
                 
                 <a href="https://www.linkedin.com/in/thamaru-jalthotage-a78145245" 
                 target="_blank" 
@@ -229,17 +233,18 @@ const BodyContent = () => {
         <Container fluid className="py-5 px-5 about-me-section">
         <Row className="justify-content-center align-items-stretch">
             {/* Left Section */}
-            <Col md={6} className="mb-4 d-flex">
+            <Col md={6} className="mb-4 d-flex pt-3">
             <motion.div
-                initial={{ opacity: 0, y:50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.8 }}
                 className="w-100"
             >
                 <Card className="p-4 shadow-lg border-0 rounded-3 text-start w-100 h-100 bg-gray custom-card-adjustment">
                 <Card.Body > 
                     <h2 className="mb-3 d-flex align-items-center ">
-                    <i className="fas fa-user me-2 "></i> About
+                    <i className="fas fa-user me-2"></i> About
                     </h2>
                     <p>
                         I am an undergraduate at the University of Sabaragamuwa, Sri Lanka, currently pursuing a degree in Computing and Information Systems. I am passionate about Artificial Intelligence and CI/CD practices, and I’m eager to explore how these areas can transform the way we build and deliver software.
@@ -278,8 +283,9 @@ const BodyContent = () => {
                         <Col xs={6} className="d-flex" key={item.title}>
                             <motion.div
                                 initial={{ opacity: 0, y: 50 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.2 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false, amount: 0.2 }}
+                                transition={{ duration: 0.8 }}
                                 className="w-100 d-flex"
                             >
                                 <Card className="p-3 shadow-sm border-1 rounded-3 d-flex flex-column justify-content-center align-items-center text-center w-100 h-100">
@@ -303,116 +309,191 @@ const BodyContent = () => {
         </Container>
 
 
-        <Container fluid className=" skills-section bg-dark text-light py-2 px-5"> 
-            <h1 className="mb-3 d-flex align-items-center mt-4">
-                <i className="fas fa-code me-2 "></i> Skills
-            </h1>
+        <Container fluid className=" skills-section bg-dark text-light py-2 px-5">
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.8 }}
+            >
 
-            <p className="w-100 mx-left text-start">I am constantly expanding my knowledge and staying up to date with the latest technologies. With a strong willingness to learn, I strive to gain a broad understanding of diverse fields such as cloud platforms, DevOps, mobile application development, Artificial Intelligence, and Machine Learning. My goal is to develop not just technical expertise, but also the ability to see the bigger picture across different domains.
+                <h1 className="mb-3 d-flex align-items-center mt-4">
+                    <i className="fas fa-code me-2 "></i> Skills
+                </h1>
+            </motion.div> 
 
-            <br />
-            At the same time, I’m focused on enhancing my soft skills including effective communication, presenting ideas clearly, teamwork, and collaboration. I enjoy identifying the strengths of individuals in a team and bringing out the best in everyone, while sharpening my leadership abilities. In addition, I’m working on building adaptability, time management, and critical thinking skills, which I believe are just as essential as technical knowledge. This balance between technical and interpersonal skills helps me grow as a well-rounded professional, ready to contribute and learn in any environment.
-            </p>
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.8, delay:0.3 }}
+            >
+                <p className="w-100 mx-left text-start">I am constantly expanding my knowledge and staying up to date with the latest technologies. With a strong willingness to learn, I strive to gain a broad understanding of diverse fields such as cloud platforms, DevOps, mobile application development, Artificial Intelligence, and Machine Learning. My goal is to develop not just technical expertise, but also the ability to see the bigger picture across different domains.
 
+                <br />
+                At the same time, I’m focused on enhancing my soft skills including effective communication, presenting ideas clearly, teamwork, and collaboration. I enjoy identifying the strengths of individuals in a team and bringing out the best in everyone, while sharpening my leadership abilities. In addition, I’m working on building adaptability, time management, and critical thinking skills, which I believe are just as essential as technical knowledge. This balance between technical and interpersonal skills helps me grow as a well-rounded professional, ready to contribute and learn in any environment.
+                </p>
+            </motion.div>
+
+            <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8 }}>
+
+            
             <h3 className="text-start mt-5">
                 <i className="fas fa-cogs me-2 mb-4"></i> Technical Skills
             </h3>
+
+            </motion.div>
+            
             <Row>
-                <Col xs={6} md={3} className="text-center mb-4">
-                    <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
-                    <h3 className="mb-5  fw-light">Programming Languages</h3>
-                        <Card.Body>
-                            <Row className="justify-content-center g-4">
-                            {languages.map((lang, index) => (
-                                <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
-                                <img
-                                    src={lang.icon}
-                                    alt={lang.name}
-                                    style={{ maxWidth: "100px", height: "auto" }}
-                                />
-                                </Col>
-                            ))}
-                            </Row>
-                        </Card.Body>
-                    </Card>
-                </Col>
 
+
+ 
                 <Col xs={6} md={3} className="text-center mb-4">
-                    <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
-                        <h3 className="mb-5 fw-light">Frameworks & Libraries</h3>
-                        <Card.Body>
-                            <Row className="justify-content-center g-4">
-                                {frameworks_libraries.map((fw, index) => (
-                                <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
+                    <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ delay: 0.1,duration: 0.8 }}
+                    >
+                        <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
+                        <h3 className="mb-5  fw-light">Programming Languages</h3>
+                            <Card.Body>
+                                <Row className="justify-content-center g-4">
+                                {languages.map((lang, index) => (
+                                    <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
                                     <img
-                                    src={fw.icon}
-                                    alt={fw.name}
-                                    style={{ maxWidth: "120px", height: "auto" }}
+                                        src={lang.icon}
+                                        alt={lang.name}
+                                        style={{ maxWidth: "100px", height: "auto" }}
                                     />
-                                </Col>
+                                    </Col>
                                 ))}
-                            </Row>
-                        </Card.Body>
-                    </Card>
+                                </Row>
+                            </Card.Body>
+                        </Card>
+                    </motion.div>
+
                 </Col>
 
-                <Col xs={6} md={3} className="text-center mb-4">
-                    <Card className="bg-dark text-light border-0 shadow-lg rounded-1 custom-card-skills-section">
-                        <h3 className="mb-5  fw-light">Database</h3>
-                        <Card.Body>
-                            <Row className="justify-content-center g-4">
-                                {databases.map((db, index) => (
-                                <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
-                                    <img
-                                    src={db.icon}
-                                    alt={db.name}
-                                    style={{ maxWidth: "120px", height: "auto" }}
-                                        />
-                                </Col>
-                                ))}
-                            </Row>
-                        </Card.Body>
-                    </Card>
-                </Col>
 
                 <Col xs={6} md={3} className="text-center mb-4">
-                    <Card className="bg-dark text-light border-0 shadow-lg rounded-1 custom-card-skills-section">
-                        <h3 className="mb-5  fw-light">Cloud & DevOps</h3>
-                        <Card.Body >
-                            <Row className="justify-content-center g-4">
-                                {cloud_devops.map((cd, index)=>(
+                    <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ delay: 0.3,duration: 0.8 }}
+                    >
+                        <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
+                            <h3 className="mb-5 fw-light">Frameworks & Libraries</h3>
+                            <Card.Body>
+                                <Row className="justify-content-center g-4">
+                                    {frameworks_libraries.map((fw, index) => (
                                     <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
                                         <img
-                                        src={cd.icon}
-                                        alt={cd.name}
+                                        src={fw.icon}
+                                        alt={fw.name}
                                         style={{ maxWidth: "120px", height: "auto" }}
                                         />
                                     </Col>
-                                ))}
-                            </Row>
-                        </Card.Body>
+                                    ))}
+                                </Row>
+                            </Card.Body>
+                        </Card>
+                    </motion.div>
+                </Col>
 
-                    </Card>
+                <Col xs={6} md={3} className="text-center mb-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ delay: 0.5,duration: 0.8 }}
+                    >
+
+                        <Card className="bg-dark text-light border-0 shadow-lg rounded-1 custom-card-skills-section">
+                            <h3 className="mb-5  fw-light">Database</h3>
+                            <Card.Body>
+                                <Row className="justify-content-center g-4">
+                                    {databases.map((db, index) => (
+                                    <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
+                                        <img
+                                        src={db.icon}
+                                        alt={db.name}
+                                        style={{ maxWidth: "120px", height: "auto" }}
+                                            />
+                                    </Col>
+                                    ))}
+                                </Row>
+                            </Card.Body>
+                        </Card>
+                    </motion.div>
+                </Col>
+
+                <Col xs={6} md={3} className="text-center mb-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ delay: 0.7,duration: 0.8 }}
+                    >
+                        <Card className="bg-dark text-light border-0 shadow-lg rounded-1 custom-card-skills-section">
+                            <h3 className="mb-5  fw-light">Cloud & DevOps</h3>
+                            <Card.Body >
+                                <Row className="justify-content-center g-4">
+                                    {cloud_devops.map((cd, index)=>(
+                                        <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
+                                            <img
+                                            src={cd.icon}
+                                            alt={cd.name}
+                                            style={{ maxWidth: "120px", height: "auto" }}
+                                            />
+                                        </Col>
+                                    ))}
+                                </Row>
+                            </Card.Body>
+
+                        </Card>
+                    </motion.div>
                 </Col>
 
             </Row>
 
 
-
-            <h3 className="text-start mt-5">
-                <i className="fas fa-lightbulb me-2 mb-4"></i> Soft Skills
-            </h3>
+            <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+            >
+                                  
+                <h3 className="text-start mt-5">
+                    <i className="fas fa-lightbulb me-2 mb-4"></i> Soft Skills
+                </h3>
+            </motion.div>    
 
             <Row className="g-4 justify-content-center">
                 {softSkills.map((skill, index) => (
-                <Col xs={12} md={6} lg={3} key={index} className="d-flex">
-                    <Card className="p-3 shadow-sm border-0 flex-fill d-flex flex-column justify-content-center align-items-center text-center">
-                    <i className={`${skill.icon} fa-2x mb-2`}></i>
-                    <h5>{skill.name}</h5>
-                    </Card>
-                </Col>
+                    <Col xs={12} md={6} lg={3} key={index} className="d-flex">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.8, delay: index * 0.05 }} // stagger effect
+                        className="w-100"
+                    >
+                        <Card className="p-3 shadow-sm border-0 flex-fill d-flex flex-column justify-content-center align-items-center text-center">
+                        <i className={`${skill.icon} fa-2x mb-2`}></i>
+                        <h5>{skill.name}</h5>
+                        </Card>
+                    </motion.div>
+                    </Col>
                 ))}
             </Row>
+
 
             <hr/>
 
@@ -420,46 +501,71 @@ const BodyContent = () => {
 
 
     <Container fluid className="skills-section bg-dark text-light p-3 px-5">
-        <h1 className="mb-3 d-flex align-items-center mt-2">
-            <i className="fas fa-graduation-cap me-2"></i> Education
-        </h1>
-        <p className="w-100 mx-left text-start">
-            From 2008 to 2021, I studied at Mahanama College, Colombo, where I successfully completed both my G.C.E. Ordinary Level and Advanced Level examinations. After completing school, I was selected to pursue higher studies at the University of Sabaragamuwa, Sri Lanka.
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+        >
+                    
+            <h1 className="mb-3 d-flex align-items-center mt-2">
+                <i className="fas fa-graduation-cap me-2"></i> Education
+            </h1>
+        </motion.div>
 
-            To strengthen my foundation in IT, I completed a Diploma in ICT at ICBT Campus, achieving a Distinction Pass. I also enhanced my programming knowledge by completing a Certificate Course in Java Application Development at the University of Colombo School of Computing (UCSC).
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay:0.2 }}
+        >
+            <p className="w-100 mx-left text-start">
+                From 2008 to 2021, I studied at Mahanama College, Colombo, where I successfully completed both my G.C.E. Ordinary Level and Advanced Level examinations. After completing school, I was selected to pursue higher studies at the University of Sabaragamuwa, Sri Lanka.
 
-            Currently, I am reading for a BSc (Hons) in Computing and Information Systems at the University of Sabaragamuwa, where I continue to expand my technical expertise and practical skills to prepare for a career in the IT industry.
+                To strengthen my foundation in IT, I completed a Diploma in ICT at ICBT Campus, achieving a Distinction Pass. I also enhanced my programming knowledge by completing a Certificate Course in Java Application Development at the University of Colombo School of Computing (UCSC).
+
+                Currently, I am reading for a BSc (Hons) in Computing and Information Systems at the University of Sabaragamuwa, where I continue to expand my technical expertise and practical skills to prepare for a career in the IT industry.
         </p>
 
+        </motion.div>
+
         <Row className="justify-content-center g-4 mt-3">
-        {educationList.map((edu, index) => (
+            {educationList.map((edu, index) => (
             <Col key={index} xs={12} md={4} className="d-flex">
-            <Card className="flex-fill p-3 shadow-sm rounded-3 bg-light text-dark border-1 custom-card-education-section">
-                <Card.Body className="d-flex flex-column h-100">
-                    <Card.Title className="mb-5 fs-4 fw-light">{edu.course}</Card.Title>
-                    <Card.Subtitle className="mb-2 d-flex align-items-center text-muted">
-                    <i className="fas fa-university me-2 "></i> {edu.university}
-                    </Card.Subtitle>
-                    <div className="mt-0 d-flex align-items-center text-muted">
-                    <i className="fas fa-calendar-alt me-2 "></i> {edu.time}
-                    </div>
-                    <ul className="list-unstyled flex-grow-1 text-muted">
-                    {edu.bullets.map((bullet, idx) => (
-                        <li key={idx} className="d-flex align-items-start mb-2 mt-2 text-start">
-                        <i className="fas fas fa-arrow-right me-2 text-start mt-1"></i>
-                        <span>{bullet}</span>
-                        </li>
-                    ))}
-                    </ul>
-                        <div className="d-flex justify-content-center mt-auto">
-                        <img
-                            src={edu.logo}
-                            alt={`${edu.university} logo`}
-                            style={{ maxWidth: edu.imgWidth, height: "auto" }}
-                        />
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 0.8, delay: index * 0.15 }}
+                    className="w-100 d-flex"
+                >
+                <Card className="flex-fill p-3 shadow-sm rounded-3 bg-light text-dark border-1 custom-card-education-section">
+                    <Card.Body className="d-flex flex-column h-100">
+                        <Card.Title className="mb-5 fs-4 fw-light">{edu.course}</Card.Title>
+                        <Card.Subtitle className="mb-2 d-flex align-items-center text-muted">
+                        <i className="fas fa-university me-2 "></i> {edu.university}
+                        </Card.Subtitle>
+                        <div className="mt-0 d-flex align-items-center text-muted">
+                        <i className="fas fa-calendar-alt me-2 "></i> {edu.time}
                         </div>
-                </Card.Body>
-            </Card>
+                        <ul className="list-unstyled flex-grow-1 text-muted">
+                        {edu.bullets.map((bullet, idx) => (
+                            <li key={idx} className="d-flex align-items-start mb-2 mt-2 text-start">
+                            <i className="fas fas fa-arrow-right me-2 text-start mt-1"></i>
+                            <span>{bullet}</span>
+                            </li>
+                        ))}
+                        </ul>
+                            <div className="d-flex justify-content-center mt-auto">
+                            <img
+                                src={edu.logo}
+                                alt={`${edu.university} logo`}
+                                style={{ maxWidth: edu.imgWidth, height: "auto" }}
+                            />
+                            </div>
+                    </Card.Body>
+                </Card>
+                </motion.div>
             </Col>
         ))}
         </Row>
@@ -467,42 +573,66 @@ const BodyContent = () => {
     </Container>
 
      <Container fluid className="skills-section bg-dark text-light p-3 px-5">
-      <h1 className="mb-3 d-flex align-items-center mt-2">
-        <i className="fas fa-briefcase me-2"></i> Work Experience
-      </h1>
-      <p className="w-100 mx-left text-start">
-       I worked at Nations Trust Bank, Nugegoda Branch, prior to starting my university studies, where I gained valuable industry exposure, learning how to work in professional teams, interact with clients, resolve problems efficiently, and understand how internal structures collaborate to help a company thrive. After resigning to focus on my degree, I joined CWB Solutions Pte Ltd, Singapore, as a remote IT Administrator, where I completely rebuilt their old website and gained hands-on experience in real-world IT projects. These experiences have enhanced my technical skills, problem-solving abilities, teamwork, and industry readiness, preparing me to confidently tackle professional challenges in the IT sector.
-      </p>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6}}
+        >
+
+            <h1 className="mb-3 d-flex align-items-center mt-2">
+                <i className="fas fa-briefcase me-2"></i> Work Experience
+            </h1>
+        </motion.div>
+
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6}}
+        >
+            <p className="w-100 mx-left text-start">
+            I worked at Nations Trust Bank, Nugegoda Branch, prior to starting my university studies, where I gained valuable industry exposure, learning how to work in professional teams, interact with clients, resolve problems efficiently, and understand how internal structures collaborate to help a company thrive. After resigning to focus on my degree, I joined CWB Solutions Pte Ltd, Singapore, as a remote IT Administrator, where I completely rebuilt their old website and gained hands-on experience in real-world IT projects. These experiences have enhanced my technical skills, problem-solving abilities, teamwork, and industry readiness, preparing me to confidently tackle professional challenges in the IT sector.
+            </p>
+        </motion.div>
 
       <Row className="justify-content-center g-4 mt-3">
         {workExperienceList.map((work, index) => (
           <Col key={index} xs={12} md={4} className="d-flex">
-            <Card className="flex-fill p-3 shadow-sm rounded-3 bg-light text-dark border-1 custom-card-education-section">
-                <Card.Body className="d-flex flex-column h-100">
-                    <Card.Title className="mb-5 fs-3 fw-light">{work.company}</Card.Title>
-                    <Card.Subtitle className="mb-2 d-flex align-items-center text-muted">
-                    <i className="fas fa-university me-2 "></i> {work.role}
-                    </Card.Subtitle>
-                    <div className="mt-0 d-flex align-items-center text-muted">
-                    <i className="fas fa-calendar-alt me-2 "></i> {work.time}
-                    </div>
-                    <ul className="list-unstyled flex-grow-1 text-muted">
-                    {work.bullets.map((bullet, idx) => (
-                        <li key={idx} className="d-flex align-items-start mb-2 mt-2 text-start">
-                        <i className="fas fas fa-arrow-right me-2 text-start mt-1"></i>
-                        <span>{bullet}</span>
-                        </li>
-                    ))}
-                    </ul>
-                        <div className="d-flex justify-content-center mt-auto">
-                        <img
-                            src={work.logo}
-                            alt={`${work.logo} logo`}
-                            style={{ maxWidth: work.imgWidth, height: "auto" }}
-                        />
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+                className="w-100 d-flex"
+            >
+                <Card className="flex-fill p-3 shadow-sm rounded-3 bg-light text-dark border-1 custom-card-education-section">
+                    <Card.Body className="d-flex flex-column h-100">
+                        <Card.Title className="mb-5 fs-3 fw-light">{work.company}</Card.Title>
+                        <Card.Subtitle className="mb-2 d-flex align-items-center text-muted">
+                        <i className="fas fa-university me-2 "></i> {work.role}
+                        </Card.Subtitle>
+                        <div className="mt-0 d-flex align-items-center text-muted">
+                        <i className="fas fa-calendar-alt me-2 "></i> {work.time}
                         </div>
-                </Card.Body>
-            </Card>
+                        <ul className="list-unstyled flex-grow-1 text-muted">
+                        {work.bullets.map((bullet, idx) => (
+                            <li key={idx} className="d-flex align-items-start mb-2 mt-2 text-start">
+                            <i className="fas fas fa-arrow-right me-2 text-start mt-1"></i>
+                            <span>{bullet}</span>
+                            </li>
+                        ))}
+                        </ul>
+                            <div className="d-flex justify-content-center mt-auto">
+                            <img
+                                src={work.logo}
+                                alt={`${work.logo} logo`}
+                                style={{ maxWidth: work.imgWidth, height: "auto" }}
+                            />
+                            </div>
+                    </Card.Body>
+                </Card>
+            </motion.div>
           </Col>
         ))}
       </Row>
