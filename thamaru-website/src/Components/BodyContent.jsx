@@ -348,119 +348,100 @@ const BodyContent = () => {
 
             </motion.div>
             
-            <Row>
+<Row>
+  {/* Programming Languages */}
+  <Col xs={12} md={3} className="text-center mb-4">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ delay: 0.1, duration: 0.8 }}
+    >
+      <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
+        <h3 className="mb-5 fw-light">Programming Languages</h3>
+        <Card.Body>
+          <Row className="justify-content-center g-4">
+            {languages.map((lang, index) => (
+              <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
+                <img src={lang.icon} alt={lang.name} />
+              </Col>
+            ))}
+          </Row>
+        </Card.Body>
+      </Card>
+    </motion.div>
+  </Col>
 
+  {/* Frameworks & Libraries */}
+  <Col xs={12} md={3} className="text-center mb-4">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ delay: 0.3, duration: 0.8 }}
+    >
+      <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
+        <h3 className="mb-5 fw-light">Frameworks & Libraries</h3>
+        <Card.Body>
+          <Row className="justify-content-center g-4">
+            {frameworks_libraries.map((fw, index) => (
+              <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
+                <img src={fw.icon} alt={fw.name} />
+              </Col>
+            ))}
+          </Row>
+        </Card.Body>
+      </Card>
+    </motion.div>
+  </Col>
 
- 
-                <Col xs={6} md={3} className="text-center mb-4">
-                    <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    transition={{ delay: 0.1,duration: 0.8 }}
-                    >
-                        <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
-                        <h3 className="mb-5  fw-light">Programming Languages</h3>
-                            <Card.Body>
-                                <Row className="justify-content-center g-4">
-                                {languages.map((lang, index) => (
-                                    <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
-                                    <img
-                                        src={lang.icon}
-                                        alt={lang.name}
-                                        style={{ maxWidth: "100px", height: "auto" }}
-                                    />
-                                    </Col>
-                                ))}
-                                </Row>
-                            </Card.Body>
-                        </Card>
-                    </motion.div>
+  {/* Database */}
+  <Col xs={12} md={3} className="text-center mb-4">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ delay: 0.5, duration: 0.8 }}
+    >
+      <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
+        <h3 className="mb-5 fw-light">Database</h3>
+        <Card.Body>
+          <Row className="justify-content-center g-4">
+            {databases.map((db, index) => (
+              <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
+                <img src={db.icon} alt={db.name} />
+              </Col>
+            ))}
+          </Row>
+        </Card.Body>
+      </Card>
+    </motion.div>
+  </Col>
 
-                </Col>
+  {/* Cloud & DevOps */}
+  <Col xs={12} md={3} className="text-center mb-4">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ delay: 0.7, duration: 0.8 }}
+    >
+      <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
+        <h3 className="mb-5 fw-light">Cloud & DevOps</h3>
+        <Card.Body>
+          <Row className="justify-content-center g-4">
+            {cloud_devops.map((cd, index) => (
+              <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
+                <img src={cd.icon} alt={cd.name} />
+              </Col>
+            ))}
+          </Row>
+        </Card.Body>
+      </Card>
+    </motion.div>
+  </Col>
+</Row>
 
-
-                <Col xs={6} md={3} className="text-center mb-4">
-                    <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    transition={{ delay: 0.3,duration: 0.8 }}
-                    >
-                        <Card className="bg-dark text-light border-0 text-center shadow-lg rounded-1 custom-card-skills-section">
-                            <h3 className="mb-5 fw-light">Frameworks & Libraries</h3>
-                            <Card.Body>
-                                <Row className="justify-content-center g-4">
-                                    {frameworks_libraries.map((fw, index) => (
-                                    <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
-                                        <img
-                                        src={fw.icon}
-                                        alt={fw.name}
-                                        style={{ maxWidth: "120px", height: "auto" }}
-                                        />
-                                    </Col>
-                                    ))}
-                                </Row>
-                            </Card.Body>
-                        </Card>
-                    </motion.div>
-                </Col>
-
-                <Col xs={6} md={3} className="text-center mb-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ delay: 0.5,duration: 0.8 }}
-                    >
-
-                        <Card className="bg-dark text-light border-0 shadow-lg rounded-1 custom-card-skills-section">
-                            <h3 className="mb-5  fw-light">Database</h3>
-                            <Card.Body>
-                                <Row className="justify-content-center g-4">
-                                    {databases.map((db, index) => (
-                                    <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
-                                        <img
-                                        src={db.icon}
-                                        alt={db.name}
-                                        style={{ maxWidth: "120px", height: "auto" }}
-                                            />
-                                    </Col>
-                                    ))}
-                                </Row>
-                            </Card.Body>
-                        </Card>
-                    </motion.div>
-                </Col>
-
-                <Col xs={6} md={3} className="text-center mb-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ delay: 0.7,duration: 0.8 }}
-                    >
-                        <Card className="bg-dark text-light border-0 shadow-lg rounded-1 custom-card-skills-section">
-                            <h3 className="mb-5  fw-light">Cloud & DevOps</h3>
-                            <Card.Body >
-                                <Row className="justify-content-center g-4">
-                                    {cloud_devops.map((cd, index)=>(
-                                        <Col xs={6} md={6} key={index} className="d-flex justify-content-center">
-                                            <img
-                                            src={cd.icon}
-                                            alt={cd.name}
-                                            style={{ maxWidth: "120px", height: "auto" }}
-                                            />
-                                        </Col>
-                                    ))}
-                                </Row>
-                            </Card.Body>
-
-                        </Card>
-                    </motion.div>
-                </Col>
-
-            </Row>
 
 
             <motion.div

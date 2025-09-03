@@ -85,6 +85,12 @@
     color: black;
 }
 
+.custom-card-skills-section img {
+  max-width: 100px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
 
 
 .custom-card-education-section{
@@ -118,11 +124,11 @@ background-position: 0 0, 0 0, 4px 7px, 4px 7px, 0 0, 4px 7px;
         font-size: 2.5em;
         font-weight: 300;
     }
-    .full-width-section {
-        height: 150vw; /* Adjust height for mobile */
-    }
     .custom-card-adjustment{
         text-align: center !important;
+    }  
+    .custom-card-skills-section img {
+        max-width: 100px; /* bigger on mobile */
     }
 
 
