@@ -230,7 +230,7 @@ const BodyContent = () => {
         </Container>
 
 
-        <Container fluid className="py-5 px-5 about-me-section">
+        <Container fluid className="py-5 px-5 about-me-section " id="about">
         <Row className="justify-content-center align-items-stretch">
             {/* Left Section */}
             <Col md={6} className="mb-4 d-flex pt-3">
@@ -309,7 +309,7 @@ const BodyContent = () => {
         </Container>
 
 
-        <Container fluid className=" skills-section bg-dark text-light py-2 px-5">
+        <Container fluid className=" skills-section bg-dark text-light py-2 px-5 " id="skills">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -481,7 +481,7 @@ const BodyContent = () => {
         </Container>
 
 
-    <Container fluid className="skills-section bg-dark text-light p-3 px-5">
+    <Container fluid className="skills-section bg-dark text-light p-3 px-5" id="education">
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -561,7 +561,7 @@ const BodyContent = () => {
             transition={{ duration: 0.6}}
         >
 
-            <h1 className="mb-3 d-flex align-items-center mt-2">
+            <h1 className="mb-3 d-flex align-items-center mt-2" id="experience">
                 <i className="fas fa-briefcase me-2"></i> Work Experience
             </h1>
         </motion.div>
