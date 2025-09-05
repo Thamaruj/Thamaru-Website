@@ -111,7 +111,7 @@ const BodyContent = () => {
 
   return (
     <>
-        <Container fluid className="full-width-section mt-lg-5">
+        <Container fluid className="full-width-section mt-lg-5 ">
         {/* Profile Photo Row */}
         <Row className="justify-content-center text-center m-0 mt-5 pt-5 pt-sm-0">
             <Col xs="auto">
@@ -230,34 +230,35 @@ const BodyContent = () => {
         </Container>
 
 
-        <Container fluid className="py-5 px-5 about-me-section " id="about">
+        <Container fluid className="py-5 about-me-section " id="about">
         <Row className="justify-content-center align-items-stretch">
             {/* Left Section */}
-            <Col md={6} className="mb-4 d-flex pt-3">
+            <Col md={6} xs={12} className="mb-4 d-flex pt-3">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.8 }}
                 className="w-100"
-            >
-                <Card className="p-4 shadow-lg border-0 rounded-3 text-start w-100 h-100 bg-gray custom-card-adjustment">
-                    <Card.Body > 
-                        <h2 className="mb-3 d-flex align-items-center ">
-                        <i className="fas fa-user me-2"></i> About
-                        </h2>
-                        <p>
-                            I am an undergraduate at the University of Sabaragamuwa, Sri Lanka, currently pursuing a degree in Computing and Information Systems. I am passionate about Artificial Intelligence and CI/CD practices, and I’m eager to explore how these areas can transform the way we build and deliver software.
+                            >
+                <Card className="p-4 shadow-lg border-0 rounded-3 text-center w-100 h-100 bg-gray custom-card-adjustment">
+                <Card.Body> 
+                    <h2 className="mb-3 d-flex justify-content-center align-items-center">
+                    <i className="fas fa-user me-2"></i> About
+                    </h2>
+                    <p className="text-justify">
+                    I am an undergraduate at the University of Sabaragamuwa, Sri Lanka, currently pursuing a degree in Computing and Information Systems. I am passionate about Artificial Intelligence and CI/CD practices, and I’m eager to explore how these areas can transform the way we build and deliver software.
 
-                            I love learning new things, experimenting with fresh ideas, and exploring emerging technologies. Whether it’s diving into modern frameworks, solving challenging problems, or collaborating on projects, I’m always driven by curiosity and the excitement of continuous growth.
-                        </p>
-                    </Card.Body>
+                    I love learning new things, experimenting with fresh ideas, and exploring emerging technologies. Whether it’s diving into modern frameworks, solving challenging problems, or collaborating on projects, I’m always driven by curiosity and the excitement of continuous growth.
+                    </p>
+                </Card.Body>
                 </Card>
+
             </motion.div>
             </Col>
 
             {/* Right Section */}
-            <Col xs={12} md={6} className="d-flex">
+            <Col xs={12} md={6} className="d-flex justify-content-center">
                 <Row className="g-3 w-100 h-100">
                     {[
                         {   icon: Users, 
@@ -309,7 +310,7 @@ const BodyContent = () => {
         </Container>
 
 
-        <Container fluid className=" skills-section bg-dark text-light py-2 px-5 " id="skills">
+        <Container fluid className=" skills-section bg-dark text-light py-2 px-3" id="skills">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -481,7 +482,7 @@ const BodyContent = () => {
         </Container>
 
 
-    <Container fluid className="skills-section bg-dark text-light p-3 px-5" id="education">
+    <Container fluid className="skills-section bg-dark text-light p-3 " id="education">
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -553,7 +554,7 @@ const BodyContent = () => {
           <hr />
     </Container>
 
-     <Container fluid className="skills-section bg-dark text-light p-3 px-5">
+     <Container fluid className="skills-section bg-dark text-light p-3 px">
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
