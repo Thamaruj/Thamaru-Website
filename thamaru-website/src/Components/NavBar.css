@@ -22,8 +22,13 @@
     transition: background-color 0.3s ease; /* Only transition the background color */
 }
 
+.nav-link.active,
+.nav-link:active {
+  color:  #a0a1a15f !important; 
+}
+
 .nav-item:hover {
-    background-color: #bfc0c063; /* Change background on hover */
+    background-color: #a0a1a15f; /* Change background on hover */
     transform: scale(1.5); /* Slight zoom effect */
 }
 
@@ -37,4 +42,15 @@
 
 .nav-link{
     text-decoration: none;
+}
+
+.nav-link, 
+.nav-link.btn {
+    background: none;
+    border: none;
+    margin: 5px;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }

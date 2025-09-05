@@ -109,7 +109,7 @@ const NavigationBar = () => {
                 </a>
               ) : (
                 <button
-                  className="nav-link btn p-0"
+                  className="nav-link btn btn-link p-0"
                   onClick={() =>
                     item.link.startsWith("#")
                       ? scrollToSection(item.link.substring(1))
