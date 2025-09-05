@@ -257,7 +257,7 @@ const BodyContent = () => {
             </Col>
 
             {/* Right Section */}
-            <Col md={6} className="d-flex">
+            <Col xs={12} md={6} className="d-flex">
                 <Row className="g-3 w-100 h-100">
                     {[
                         {   icon: Users, 
@@ -285,7 +285,7 @@ const BodyContent = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: false, amount: 0.2 }}
-                                transition={{ duration: 0.8 }}
+                                transition={{ duration: 0.8, delay:0.2*index }}
                                 className="w-100 d-flex"
                             >
                                 <Card className="p-3 shadow-sm border-1 rounded-3 d-flex flex-column justify-content-center align-items-center text-center w-100 h-100 custom-card-about-section">

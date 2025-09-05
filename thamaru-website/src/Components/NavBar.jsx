@@ -26,7 +26,7 @@ const navItems = [
   { text: "Skills", icon: "fas fa-code", link: "#skills" },
   { text: "Education", icon: "fas fa-graduation-cap", link: "#education" },
   { text: "Experience", icon: "fas fa-briefcase", link: "#experience" },
-  { text: "Résumé", icon: "fas fa-file-alt", link: "/resume.pdf", download: true},
+  { text: "Résumé", icon: "fas fa-download", link: "/resume.pdf", download: true},
 ];
 
 const NavigationBar = () => {
@@ -94,69 +94,70 @@ const NavigationBar = () => {
 
         <Navbar.Collapse id='navbarScroll'>
           {/* Desktop Nav with animation */}
-          <Nav className="ms-auto d-none d-lg-flex align-items-center">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.text}
-                className="nav-item me-3"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.15, duration: 0.35 }}
-              >
-                {item.download ? (
-                  <a href={item.link} download className="nav-link">
-                    <i className={`${item.icon} me-0`}></i> {item.text}
-                  </a>
-                ) : item.link.startsWith("#") ? (
-                  <button
-                    className="nav-link btn btn-link p-0"
-                    onClick={() => scrollToSection(item.link.substring(1))}
-                  >
-                    <i className={`${item.icon} me-0`}></i> {item.text}
-                  </button>
-                ) : (
-                  <Link to={item.link} className="nav-link">
-                    <i className={`${item.icon} me-0`}></i> {item.text}
-                  </Link>
-                )}
-              </motion.div>
-            ))}
-          </Nav>
+        <Nav className="ms-auto d-none d-lg-flex align-items-center">
+          {navItems.map((item, index) => (
+            <motion.div
+              key={item.next}
+              className="nav-item "
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{  delay: index * 0.15, duration: 0.35}}
+            >
+              {item.download ? (
+                <a href={item.link} download className="nav-link">
+                  <i className={`${item.icon} me-0`}></i> {item.text}
+                </a>
+              ) : (
+                <button
+                  className="nav-link btn p-0"
+                  onClick={() =>
+                    item.link.startsWith("#")
+                      ? scrollToSection(item.link.substring(1))
+                      : window.location.assign(item.link)
+                  }
+                >
+                  <i className={`${item.icon} me-0`}></i> {item.text}
+                </button>
+              )}
+            </motion.div>
+          ))}
+        </Nav>
+
 
          {/* Mobile Nav with icons and animation */}
-{isMobile && (
-  <Nav className="ms-auto d-flex flex-column align-items-start w-100">
-    {isOpen && navItems.map((item, index) => (
-      <motion.div
-        key={item.text}
-        className="nav-item w-100"
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: index * 0.1, duration: 0.35 }}
-      >
-        {item.download ? (
-          <a
-            href={item.link}
-            download
-            onClick={() => setIsOpen(false)}
-            className="d-flex align-items-center mb-2 p-2 w-100 shadow-sm rounded nav-link"
-          >
-            <i className={`${item.icon} me-2`}></i> {item.text}
-          </a>
-        ) : (
-          <button
-            className="d-flex align-items-center mb-2 p-2 w-100 shadow-sm rounded nav-link btn btn-link text-start"
-            onClick={() => {
-              scrollToSection(item.link.substring(1)); // scroll to section
-              setIsOpen(false); // close mobile menu
-            }}
-          >
-            <i className={`${item.icon} me-2`}></i> {item.text}
-          </button>
-        )}
-      </motion.div>
-    ))}
-  </Nav>
+          {isMobile && (
+            <Nav className="ms-auto d-flex flex-column align-items-start w-100">
+              {isOpen && navItems.map((item, index) => (
+                <motion.div
+                  key={item.text}
+                  className="nav-item w-100"
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.35 }}
+                >
+                  {item.download ? (
+                    <a
+                      href={item.link}
+                      download
+                      onClick={() => setIsOpen(false)}
+                      className="d-flex align-items-center mb-2 p-2 w-100 shadow-sm rounded nav-link"
+                    >
+                      <i className={`${item.icon} me-2`}></i> {item.text}
+                    </a>
+                  ) : (
+                    <button
+                      className="d-flex align-items-center mb-2 p-2 w-100 shadow-sm rounded nav-link btn btn-link text-start"
+                      onClick={() => {
+                        scrollToSection(item.link.substring(1)); // scroll to section
+                        setIsOpen(false); // close mobile menu
+                      }}
+                    >
+                      <i className={`${item.icon} me-2`}></i> {item.text}
+                    </button>
+                  )}
+                </motion.div>
+              ))}
+            </Nav>
 )}
 
         </Navbar.Collapse>

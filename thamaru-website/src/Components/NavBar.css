@@ -23,7 +23,7 @@
 }
 
 .nav-item:hover {
-    background-color: #9597971c; /* Change background on hover */
+    background-color: #bfc0c063; /* Change background on hover */
     transform: scale(1.5); /* Slight zoom effect */
 }
 
